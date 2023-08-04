@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import StarRating from "./StarRating";
+
+/*
+----DEFAULT PARAMETERS-----
+maxRating = 5,
+  color = "#fcc419",
+  size = 48,
+  messages = [],
+  defaultRating = 0,
+  onSetRating = (rating) => console.log("Selected rating:", rating)
+*/
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <StarRating maxRating={10} size={70} />
+      <StarRating
+        maxRating={5}
+        size={50}
+        color={"red"}
+        messages={["Çok kötü", "Kötü", "Orta", "İyi", "Çok iyi"]}
+      />
+      <StarRating
+        maxRating={5}
+        size={30}
+        color={"#000"}
+        messages={["Terrible", "Bad", "Okay", "Good", "Amazing"]}
+      />
     </div>
   );
 }
